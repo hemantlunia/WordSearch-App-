@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Items App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #350cda;
+            margin: 0;
+            padding: 0;
+        }
+
+        #search-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        #search {
+            width: 99%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* #item-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        } */
+
+        .item {
+            /* background-color: #250a6d; */
+            padding: 10px;
+            margin: 10px;
+            /* border: 1px solid #ddd; */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="search-container">
+        <h1>Search Items</h1>
+        <input type="text" id="search" placeholder="Search items...">
+    </div>
+    <ul id="item-list">
+        <li class="item">Apple</li>
+        <li class="item">Banana</li>
+        <li class="item">Orange</li>
+        <li class="item">Grapes</li>
+        <li class="item">Strawberry</li>
+        <li class="item">Pineapple</li>
+        <li class="item">Watermelon</li>
+        <li class="item">Mango</li>
+        <li class="item">Kiwi</li>
+        <li class="item">Cherry</li>
+        <li class="item">Papaya</li>
+        <li class="item">Blueberry</li>
+        <li class="item">Lemon</li>
+        <li class="item">Peach</li>
+        <li class="item">Blackberry</li>
+        <li class="item">Dog</li>
+        <li class="item">Cat</li>
+        <li class="item">Elephant</li>
+        <li class="item">Lion</li>
+        <li class="item">Giraffe</li>
+        <li class="item">Zebra</li>
+        <li class="item">Kangaroo</li>
+        <li class="item">Tiger</li>
+        <li class="item">Penguin</li>
+        <li class="item">Hippopotamus</li>
+        <li class="item">Gorilla</li>
+        <li class="item">Koala</li>
+        <li class="item">Gazelle</li>
+        <li class="item">Rhinoceros</li>
+        <li class="item">Sloth</li>
+
+    </ul>
+
+    <script>
+        
+        let searchInput = document.getElementById('search');
+        let itemList = document.getElementById('item-list');
+
+
+        searchInput.addEventListener('input', () => {
+            let searchValue = searchInput.value.toLowerCase();
+
+           
+            for (let item of itemList.children) {
+                let itemName = item.textContent.toLowerCase();
+                if (itemName.includes(searchValue)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
